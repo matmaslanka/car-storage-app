@@ -1,0 +1,14 @@
+<section id="parts">
+    <header>
+        <h2>{{ name }}</h2>
+    </header>
+
+    <ul>
+        @for (part of selectedCarParts; track part.id) {
+          <li>
+            <app-part [part]="part"/>
+        </li>  
+        }
+        
+    </ul>
+</section>

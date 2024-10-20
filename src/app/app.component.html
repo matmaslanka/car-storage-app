@@ -1,0 +1,21 @@
+<app-header/>
+
+<main>
+  <ul id="cars">
+    @for (car of cars; track car.id) {
+      <li>
+        <app-cars
+        [car]="car"
+        (select)="onSelectCar($event)"
+        />
+    </li>
+    }
+  </ul>
+  
+  @if (selectedCar) {
+    <app-parts [carId]="selectedCar.id" [name]="selectedCar.name"/>
+  } @else {
+    <p id="fallback">Select car to see details</p>
+  }
+  
+</main>
